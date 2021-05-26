@@ -4,6 +4,12 @@
     update_cache: true
   become: true
 
+- name: debian | update packages
+    apt:
+      name: "*"
+      state: latest
+      update_cache: yes
+      
 - name: debian | Installing cloud-initramfs-growroot
   apt:
     name: cloud-initramfs-growroot
